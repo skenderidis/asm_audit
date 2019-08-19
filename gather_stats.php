@@ -6,7 +6,7 @@
 		exit();
 	}
 
-	$policy_name = 'collect.py 10.1.1.11 admin  123!@#qwe ' . $_POST["name"] . ' ' . $_POST["id"] . ' ' .$_POST["type"];
+	$policy_name = 'python3 collect.py 10.1.1.11 admin  123!@#qwe ' . $_POST["name"] . ' ' . $_POST["id"] . ' ' .$_POST["type"];
 //	echo $policy_name;
 	//exit();
 	$command = escapeshellcmd($policy_name);
