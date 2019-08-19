@@ -21,8 +21,6 @@ foreach($scan as $file)
 }
 
 $asm = [];
-$ltm = []; 
-$ltm_go = 0;
 $asm_go = 0;
 $dir = getcwd() . '/config_files/';
 $scan = scandir($dir);
@@ -33,10 +31,7 @@ foreach($scan as $file)
     {
 		array_push ($asm, $file);
     }
-	if (!is_dir($dir.$file) and !($file=="." || $file==".."))
-    {
-		array_push ($ltm, $file);
-    }
+
 }
 
 $policies_count = sizeof($asm);
@@ -46,9 +41,6 @@ if ($policies_count >0 )
 }
 
 
-if (in_array("device_details.txt", $ltm) and in_array("monitor.txt", $ltm) and in_array("partitions.txt", $ltm) and in_array("pools.txt", $ltm) and in_array("profile.txt", $ltm) and in_array("provisioned_modules.txt", $ltm) and in_array("route_domain.txt", $ltm) and in_array("routes.txt", $ltm) and  in_array("vlans.txt", $ltm) and in_array("virtual_servers.txt", $ltm) and in_array("trunk.txt", $ltm) and in_array("ssl_cert.txt", $ltm)) {
-   $ltm_go = 1;
-}
 ?>
 
 
@@ -89,8 +81,6 @@ if (in_array("device_details.txt", $ltm) and in_array("monitor.txt", $ltm) and i
 				  <li><a href="index.php"><img src="images/f5_2.png" height=48px></a>
 				  </li>
 				  
-				  <li class=""><a href="ltm.php"><i class="fa fa-edit"></i> LTM <span class="fa fa-chevron-down"></span></a>
-				  </li>
 				  <li><a><i class="fa fa-shield"></i> ASM <span class="fa fa-chevron-down"></span></a>
 					<ul class="nav child_menu">
 					  <?php 
@@ -142,21 +132,8 @@ if (in_array("device_details.txt", $ltm) and in_array("monitor.txt", $ltm) and i
                   </ul>
                   <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
-
-
-					    <div class="col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 20px; text-align:center">
-							<button id="ltm" type="button" class="btn btn-info" <?php if ($ltm_go==0) echo "disabled"; ?>>Create LTM <br> Report</button>						
-						</div>
-
-					    <div class="col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 20px; text-align:center">
-							<button id="asm" type="button" class="btn btn-info" <?php if ($asm_go==0) echo "disabled"; ?>>Create ASM <br> Report</button> 
-						</div>
-
-					    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px; text-align:center">
-							<button id="ltm_asm" type="button" class="btn btn-info" <?php if ($asm_go==0 || $ltm_go==0) echo "disabled"; ?>>Create LTM/ASM <br> Report</button>
-						</div>
-
+                <div class="x_content text-center">
+						<button id="asm" type="button" class="btn btn-info" <?php if ($asm_go==0) echo "disabled"; ?>>Create ASM <br> Report</button> 
                 </div>
               </div>
             </div>
@@ -204,6 +181,7 @@ if (in_array("device_details.txt", $ltm) and in_array("monitor.txt", $ltm) and i
 					<button id="delete" type="button" class="btn btn-danger" style="float:right">Delete Files</button>
 					
                   </div>
+				  
                 </div>
               </div>
    

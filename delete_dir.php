@@ -24,5 +24,5 @@ if (is_array($reports_structure))
 		elseif (is_file($file)) unlink($file);
 	}
 }
-Header ("Location:index.php?error=0");
+Header ("Location:index.php");
 ?>

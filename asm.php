@@ -1,8 +1,6 @@
 <?php 
 
 $asm = [];
-$ltm = []; 
-$ltm_go = 0;
 $asm_go = 0;
 $dir = getcwd() . '/config_files/';
 $scan = scandir($dir);
@@ -12,10 +10,6 @@ foreach($scan as $file)
     if (is_dir($dir.$file) and !($file=="." || $file==".."))
     {
 		array_push ($asm, $file);
-    }
-	if (!is_dir($dir.$file) and !($file=="." || $file==".."))
-    {
-		array_push ($ltm, $file);
     }
 }
 
@@ -30,9 +24,6 @@ else
 	exit();
 }
 
-if (in_array("device_details.txt", $ltm) and in_array("monitor.txt", $ltm) and in_array("partitions.txt", $ltm) and in_array("pools.txt", $ltm) and in_array("profile.txt", $ltm) and in_array("provisioned_modules.txt", $ltm) and in_array("route_domain.txt", $ltm) and in_array("routes.txt", $ltm) and  in_array("vlans.txt", $ltm) and in_array("virtual_servers.txt", $ltm) and in_array("trunk.txt", $ltm) and in_array("ssl_cert.txt", $ltm)) {
-   $ltm_go = 1;
-}
 
 if(!isset($_GET["policy"]))
 {
@@ -239,8 +230,6 @@ else
 					
 				  </li>
 				  
-				  <li ><a href="ltm.php"><i class="fa fa-edit"></i> LTM <span class="fa fa-chevron-down"></span></a>
-				  </li>
 				  <li class="current-page"><a><i class="fa fa-shield"></i> ASM <span class="fa fa-chevron-down"></span></a>
 					<ul class="nav child_menu">
 					  <?php 
