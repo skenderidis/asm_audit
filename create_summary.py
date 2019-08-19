@@ -3,7 +3,6 @@ from docx.shared import Inches
 from docx.shared import Cm
 from docx.shared import RGBColor
 import datetime
-import xlsxwriter
 import requests
 import json
 import getpass
