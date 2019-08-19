@@ -111,9 +111,6 @@ for names in items:
 		else:
 			suggestions = []
 				
-		########################  Create Excel Files  ########################
-		create_asm_excel_file ("reports/"+names,  overview, allowed_responses, file_types, urls, parameters, signatures_overview, signature_sets, methods, headers, cookies, domains, ipi, ipi_categories, blocking_settings, compliance, evasions, whitelist, policy_builder)
-
 		########################  Create Word Files  ########################
 		word_file_results (document, results, overview, suggestions)
 		
