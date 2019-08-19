@@ -11,14 +11,11 @@ function recursiveRemove($dir) {
     rmdir($dir);
 	}
 
-/*
-$accesstoken = base64_encode($_POST['user'].':'.$_POST['pass']);
+
 $accesstoken = base64_encode($_POST['user'].':'.$_POST['pass']);
 $bigip_ip = $_POST['bigip_ip'];
 $error=0;
-*/
-$accesstoken = 'YWRtaW46MTIzIUAjcXdl';
-$bigip_ip = '10.1.1.11';
+
 
 if ($_POST['delete_policies']=="yes")
 {
