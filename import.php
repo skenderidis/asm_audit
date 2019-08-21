@@ -14,6 +14,8 @@ function recursiveRemove($dir) {
 
 $accesstoken = base64_encode($_POST['user'].':'.$_POST['pass']);
 $bigip_ip = $_POST['bigip_ip'];
+$user = $_POST['user'];
+$pass = $_POST['pass'];
 $error=0;
 
 
@@ -85,7 +87,6 @@ else
 //header('Content-Type: application/json');
 //echo json_encode($final_array);
 curl_close($ch);
-
 
 
 ?>
@@ -165,9 +166,30 @@ curl_close($ch);
 		<div class="row">
 		<div class="x_title" style="font-size:24px">ASM Policy: </div>
 		</div>
+
+			
+			<?php
+			
+				if ($error == 2)
+					echo '<div class="alert alert-danger alert-dismissible" role="alert">
+					  <strong>Connection Error!</strong> Please make sure that the F5 is reachable on the following IP <'.$_POST['bigip_ip'].'>.
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>';
+				if ($error == 1)
+					echo '<div class="alert alert-danger alert-dismissible" role="alert">
+					  <strong>Authentication Error!</strong> Please verify the user/pass as the F5 device responded with '.$info['http_code'].' HTTP status code
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>';
+
+			?>
+
+
 		<div class="row">
 
-			  
             <div class="col-md-8 col-sm-8 col-xs-12" id="suggestion_tab">
                 <div class="x_panel">
                   <div class="x_title">
@@ -307,6 +329,10 @@ function tooltip_init () {
 <script>
 
 $( "#analyze" ).click(function() {
+var user = "<?php echo $user; ?>";
+var pass = "<?php echo $pass; ?>";
+var bigip_ip = "<?php echo $bigip_ip; ?>";
+
 var table = $('#asm_policies').DataTable();
 var payload = "["
 var i;
@@ -350,7 +376,7 @@ $(".results").append("<h4>Parsing started for ASM policy<span style='color:blue'
 	$.ajax({
 	  method: "POST",
 	  url: "gather_stats.php",
-	  data: { name: policies[i].name, type: policies[i].type, id: policies[i].id }
+	  data: { bigip_ip: bigip_ip, username: user, password: pass, name: policies[i].name, type: policies[i].type, id: policies[i].id }
 	})
 	.done(function( msg ) {
 		$(".results").append("<h4>Parsing completed successfully.</h4>");

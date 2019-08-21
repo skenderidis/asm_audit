@@ -145,7 +145,7 @@ $final_score = "-";
         <div class="right_col" role="main">
           <!-- top tiles -->
 			<div class="row">
-				<div class="x_title" style="font-size:24px">LTM & ASM Policy</div>
+				<div class="x_title" style="font-size:24px">ASM Policy</div>
 			</div>
 			
 			<?php
