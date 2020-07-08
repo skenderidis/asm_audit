@@ -8,35 +8,12 @@
 - v15.1 (soon)
 
 
-***INSERT ANOTHER GRAPHIC HERE***
 
-[![INSERT YOUR GRAPHIC HERE](https://github.com/skenderidis/asm_audit/blob/master/images/asm_audit_1.png?raw=true)]()
-
-- Most people will glance at your `README`, *maybe* star it, and leave
-- Ergo, people should understand instantly what your project is about based on your repo
-
-> Tips
-
-- HAVE WHITE SPACE
-- MAKE IT PRETTY
-- GIFS ARE REALLY COOL
-
-> GIF Tools
-
-- Use <a href="http://recordit.co/" target="_blank">**Recordit**</a> to create quicks screencasts of your desktop and export them as `GIF`s.
-- For terminal sessions, there's <a href="https://github.com/chjj/ttystudio" target="_blank">**ttystudio**</a> which also supports exporting `GIF`s.
-
-**Recordit**
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-**ttystudio**
-
-![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
+(https://github.com/skenderidis/asm_audit/blob/master/images/asm_audit_1.png?raw=true)
 
 ---
 
-## Table of Contents (Optional)
+## Table of Contents
 
 > If your `README` has a lot of info, section headers might be nice.
 
@@ -48,23 +25,6 @@
 - [Support](#support)
 - [License](#license)
 
-
----
-
-## Example (Optional)
-
-```javascript
-// code away!
-
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
-```
-
----
 
 ## Installation
 
