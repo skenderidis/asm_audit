@@ -14,7 +14,7 @@
 ---
 
 ## Installation
-The Audit tool run as a docker container. 
+The Audit tool runs as a docker container. 
 
 ```shell
 $ docker run -dit -p 80:80 skenderidis/asm_audit
@@ -23,20 +23,21 @@ $ docker run -dit -p 80:80 skenderidis/asm_audit
 > To get started...
 
 ### Step 1
+Import the ASM policies you want to audit from the F5 device.
 
-- **Option 1**
-    - 🍴 Fork this repo!
+[![INSERT YOUR GRAPHIC HERE](https://github.com/skenderidis/asm_audit/blob/master/images/asm_audit_2.png?raw=true)]()
 
-- **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
 
 ### Step 2
+Review the recommendations for the  policy you have analysed 
 
-- **HACK AWAY!** 🔨🔨🔨
+[![INSERT YOUR GRAPHIC HERE](https://github.com/skenderidis/asm_audit/blob/master/images/asm_audit_3.png?raw=true)]()
 
-### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+### Step 3 (Optional)
+Analyze the policy again based on different security controls  
+
+[![INSERT YOUR GRAPHIC HERE](https://github.com/skenderidis/asm_audit/blob/master/images/asm_audit_4.png?raw=true)]()
 
 ---
 
